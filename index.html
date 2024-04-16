@@ -4,10 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>SPA Final Project</title>
 </head>
 
 <body>
+    <header tabindex="0">
+        <h1>SnapSeeker</h1>
+        <nav>
+            <button id="btnSearch" data-url="#search" aria-label="Click to open search page">Search Page</button>
+            <button id="btnSaved" data-url="#saved" aria-label="Click to open page with saved images">Saved
+                Pictures</button>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container">
+            <div tabindex="0" class="message">
+                <h2>Welcome to SnapSeeker!</h2>
+                <p>Here, you can search for images using keywords and save them for future reference. Once saved, you
+                    can utilize our Face Detection AI powered by MediaPipe to analyze the images for faces and other
+                    features. To get started, navigate to the <span>Search Page</span> in the navigation menu.
+            </div>
+            <div class="form-container hidden">
+                <div tabindex="0" class="searchForm">
+                    <h2>Run a search for images</h2>
+                    <form method="dialog">
+
+                        <label for="keyword">Key Term</label>
+                        <input type="text" id="keyword" name="keyword" />
+                        <button id="btnRunSearch">Run Search</button>
+
+                    </form>
+                </div>
+            </div>
+            <div tabindex="0" id="results">
+
+            </div>
+            <div tabindex="0" id=savedResults class="saved-results">
+
+            </div>
+            <dialog tabindex="0">
+
+            </dialog>
+        </div>
+    </main>
+
+    <script src="./js/main.js" type="module"></script>
 
 </body>
 

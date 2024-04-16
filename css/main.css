@@ -1,0 +1,391 @@
+/* CSS variables */
+
+:root {
+  --color-primary-one: #f7c200;
+  --color-hover-one: #fae9ad;
+  --color-primary-two: #025fc1;
+  --color-primary-three: #c4e4ff;
+  --color-accent: #9b072c;
+  --color-accent-hover: #f19fb3;
+  --background-color: #ededed;
+  --dark-color: #171010;
+  --font: "Raleway", sans-serif;
+}
+
+/* Resetting default margin and padding */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: var(--background-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header styles */
+
+header {
+  background-color: var(--color-primary-one);
+  color: var(--dark-color);
+  padding: 1.5rem 4rem;
+  margin: 0 auto;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+/* Navigation styles */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+nav button {
+  font-family: var(--font);
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: var(--color-primary-one);
+  color: var(--dark-color);
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+nav button:hover,
+nav button:focus {
+  color: var(--color-accent);
+  border-bottom: 0.2rem solid var(--color-accent);
+}
+
+nav button.active {
+  color: var(--color-accent);
+  border-bottom: 0.2rem solid var(--color-accent);
+}
+
+@media only screen and (min-width: 45em) {
+  header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  nav {
+    flex-direction: row;
+  }
+}
+
+/* Main styles */
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--color-primary-two);
+}
+
+h3 {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--color-accent);
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+  padding: 1rem;
+}
+
+.detectionMessage {
+  margin: 0;
+}
+
+span {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for search form */
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  font-family: var(--font);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-family: var(--font);
+}
+
+.searchForm button {
+  background-color: var(--color-primary-two);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 1rem;
+  border: 1px solid var(--color-primary-two);
+  padding: 0.6rem 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.searchForm button:hover,
+.searchForm button:focus {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+@media only screen and (min-width: 50em) {
+  form {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .searchForm input[type="text"] {
+    flex-basis: 20rem;
+  }
+}
+
+/* Styles for search results */
+
+.search-results {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.search-results h2 {
+  color: var(--color-primary-two);
+}
+
+#results h3 {
+  padding-top: 1rem;
+}
+
+.search-results h3 {
+  padding-top: 1.2rem;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover,
+.card:focus {
+  transform: translate(0, -5%);
+}
+
+/* Styles for saved results */
+
+.saved-results {
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media only screen and (min-width: 30em) {
+  .search-results,
+  .saved-results {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-results h2,
+  .saved-results h2 {
+    grid-column: span 2;
+  }
+
+  .search-results h3,
+  .saved-results h3 {
+    grid-column: span 2;
+  }
+}
+
+@media only screen and (min-width: 45em) {
+  .search-results,
+  .saved-results {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .search-results h2,
+  .saved-results h2 {
+    grid-column: span 3;
+  }
+
+  .search-results h3,
+  .saved-results h3 {
+    grid-column: span 3;
+  }
+}
+
+@media only screen and (min-width: 50em) {
+  .search-results,
+  .saved-results {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .search-results h2,
+  .saved-results h2 {
+    grid-column: span 4;
+  }
+
+  .search-results h3,
+  .saved-results h3 {
+    grid-column: span 4;
+  }
+}
+
+/* Styles for dialog modal */
+
+dialog {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  border-radius: 0.5rem;
+  background-color: var(--background-color);
+  border: none;
+}
+
+dialog img {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+dialog p {
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn {
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-primary-one);
+  border: 0.1rem solid var(--color-primary-one);
+}
+#close {
+  background-color: var(--color-primary-two);
+  border: 0.1rem solid var(--color-primary-two);
+  color: #fff;
+}
+#delete {
+  background-color: var(--color-accent);
+  border: 0.1rem solid var(--color-accent);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-hover-one);
+}
+#close:hover,
+#close:focus {
+  background-color: var(--color-primary-three);
+  color: #000;
+}
+#delete:hover,
+#delete:focus {
+  background-color: var(--color-accent-hover);
+  color: #000;
+}
+
+/* #detect {
+  padding: 0.6rem 1rem;
+} */
+
+dialog::backdrop {
+  background-color: rgba(14, 14, 14, 0.7);
+}
+
+@media only screen and (min-width: 50em) {
+  .buttons {
+    flex-direction: row;
+  }
+}
+
+.detectImage p {
+  position: absolute;
+  padding: 5px;
+  background-color: #025ec1c1;
+  color: #fff;
+  border: 1px dashed var(--color-primary-three);
+  z-index: 2;
+  font-family: var(--font);
+  font-size: 12px;
+  margin: 0;
+}
+
+.highlighter {
+  background: rgba(255, 0, 149, 0.25);
+  border: 1px dashed var(--color-primary-three);
+  z-index: 1;
+  position: absolute;
+}
+
+.key-point {
+  position: absolute;
+  z-index: 1;
+  width: 3px;
+  height: 3px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: block;
+}
