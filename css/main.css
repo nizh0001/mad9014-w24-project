@@ -91,6 +91,15 @@ nav button.active {
 
 /* Main styles */
 
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 main {
   padding: 20px;
 }
@@ -115,22 +124,9 @@ p {
   padding: 1rem;
 }
 
-.detectionMessage {
-  margin: 0;
-}
-
 span {
   color: var(--color-accent);
   font-weight: bold;
-}
-
-.container {
-  max-width: 80vw;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Styles for search form */
@@ -299,15 +295,11 @@ dialog img {
   padding: 1.5rem;
 }
 
-dialog p {
-  margin-bottom: 1.5rem;
-}
-
 .buttons {
   display: flex;
   flex-direction: column;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 2.5rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   justify-content: center;
@@ -336,20 +328,18 @@ dialog p {
 .btn:focus {
   background-color: var(--color-hover-one);
 }
+
 #close:hover,
 #close:focus {
   background-color: var(--color-primary-three);
   color: #000;
 }
+
 #delete:hover,
 #delete:focus {
   background-color: var(--color-accent-hover);
   color: #000;
 }
-
-/* #detect {
-  padding: 0.6rem 1rem;
-} */
 
 dialog::backdrop {
   background-color: rgba(14, 14, 14, 0.7);
@@ -359,6 +349,13 @@ dialog::backdrop {
   .buttons {
     flex-direction: row;
   }
+}
+
+/* Styles for detection face results API */
+
+.detectionMessage {
+  margin: 0;
+  padding-top: 0;
 }
 
 .detectImage p {

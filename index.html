@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header tabindex="0">
+    <header>
         <h1>SnapSeeker</h1>
         <nav>
             <button id="btnSearch" data-url="#search" aria-label="Click to open search page">Search Page</button>
@@ -24,14 +24,14 @@
     <main>
 
         <div class="container">
-            <div tabindex="0" class="message">
+            <div class="message">
                 <h2>Welcome to SnapSeeker!</h2>
                 <p>Here, you can search for images using keywords and save them for future reference. Once saved, you
                     can utilize our Face Detection AI powered by MediaPipe to analyze the images for faces and other
                     features. To get started, navigate to the <span>Search Page</span> in the navigation menu.
             </div>
             <div class="form-container hidden">
-                <div tabindex="0" class="searchForm">
+                <div class="searchForm">
                     <h2>Run a search for images</h2>
                     <form method="dialog">
 
@@ -42,13 +42,13 @@
                     </form>
                 </div>
             </div>
-            <div tabindex="0" id="results">
+            <div id="results">
 
             </div>
-            <div tabindex="0" id=savedResults class="saved-results">
+            <div id=savedResults class="saved-results">
 
             </div>
-            <dialog tabindex="0">
+            <dialog>
 
             </dialog>
         </div>
